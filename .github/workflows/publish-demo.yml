@@ -17,11 +17,7 @@ jobs:
           target: wasm32-unknown-unknown
           default: true
 
-      - uses: actions-rs/install@v0.1
-        with:
-          crate: wasm-bindgen-cli
-          version: latest
-          use-tool-cache: true
+      - uses: jetli/wasm-bindgen-action@v0.1.0
 
       - run: ./scripts/build-demo-web.sh
 
