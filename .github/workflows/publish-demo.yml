@@ -13,6 +13,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
+          toolchain: stable
           default: true
 
       - run: cargo install -f wasm-bindgen-cli
