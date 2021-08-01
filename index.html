@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Eguikit Demo</title>
+        <style>
+            html {
+                touch-action: manipulation;
+            }
+
+            body {
+                background: #1b1b1b;
+            }
+
+            html,
+            body {
+                overflow: hidden;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            canvas {
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+                position: absolute;
+                top: 0%;
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="canvas"></canvas>
+
+        <script src="eguikit_demo.js"></script>
+
+        <script>
+            wasm_bindgen("./eguikit_demo_bg.wasm")
+                .then(function () {
+                    wasm_bindgen.start("canvas");
+                })["catch"](console.error);
+        </script>
+    </body>
+</html>
