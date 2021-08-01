@@ -14,9 +14,14 @@ jobs:
         with:
           profile: minimal
           toolchain: stable
+          target: wasm32-unknown-unknown
           default: true
 
-      - run: cargo install -f wasm-bindgen-cli
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: wasm-bindgen-cli
+          version: latest
+          use-tool-cache: true
 
       - run: ./scripts/build-demo-web.sh
 
