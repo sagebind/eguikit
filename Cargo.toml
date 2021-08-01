@@ -1,0 +1,19 @@
+[package]
+name = "eguikit"
+version = "0.1.0"
+description = "A small library of assorted, reusable widgets for egui."
+authors = ["Stephen M. Coakley <me@stephencoakley.com>"]
+license = "MIT"
+keywords = ["egui"]
+categories = ["gui"]
+edition = "2018"
+
+[dependencies]
+egui = "0.13"
+
+[dependencies.keyframe]
+version = "1"
+default-features = false
+
+[workspace]
+members = ["demo"]
