@@ -12,8 +12,7 @@ edition = "2018"
 egui = "0.16.1"
 
 [dependencies.keyframe]
-version = "1"
-default-features = false
+version = "1.1.1"
 
 [workspace]
 members = ["demo"]
