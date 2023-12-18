@@ -76,7 +76,7 @@ impl Widget for Spinner {
                     (small_radius, 0.4),
                     (small_radius, 1.0)
                 ];
-                radius1.advance_by(ui.input().time % radius1.duration());
+                radius1.advance_by(ui.input(|i| i.time) % radius1.duration());
 
                 let mut radius2 = keyframes![
                     (small_radius, 0.2),
@@ -84,7 +84,7 @@ impl Widget for Spinner {
                     (small_radius, 0.6),
                     (small_radius, 1.0)
                 ];
-                radius2.advance_by(ui.input().time % radius1.duration());
+                radius2.advance_by(ui.input(|i| i.time) % radius1.duration());
 
                 let mut radius3 = keyframes![
                     (small_radius, 0.4),
@@ -92,7 +92,7 @@ impl Widget for Spinner {
                     (small_radius, 0.8),
                     (small_radius, 1.0)
                 ];
-                radius3.advance_by(ui.input().time % radius1.duration());
+                radius3.advance_by(ui.input(|i| i.time) % radius1.duration());
 
                 ui.painter().circle_filled(left, radius1.now(), color);
                 ui.painter().circle_filled(center, radius2.now(), color);
@@ -118,7 +118,7 @@ impl Widget for Spinner {
                     ];
 
                     animation.advance_and_maybe_wrap(0.1 * (bar_count - i) as f64);
-                    animation.advance_and_maybe_wrap(ui.input().time % animation.duration());
+                    animation.advance_and_maybe_wrap(ui.input(|i| i.time) % animation.duration());
 
                     let center =
                         rect.left_center() + vec2(bar_width * i as f32 + bar_width / 2.0, 0.0);
@@ -150,7 +150,7 @@ impl Widget for Spinner {
                     rect.min + vec2(0.0, square_size),
                 ];
 
-                let idx = (ui.input().time * 15.0 % positions.len() as f64) as usize;
+                let idx = (ui.input(|i| i.time) * 15.0 % positions.len() as f64) as usize;
 
                 for i in 0..5 {
                     let position = (idx + i) % positions.len();

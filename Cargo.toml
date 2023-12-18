@@ -9,7 +9,7 @@ categories = ["gui"]
 edition = "2018"
 
 [dependencies]
-egui = "0.16.1"
+egui = "0.24.1"
 
 [dependencies.keyframe]
 version = "1.1.1"
